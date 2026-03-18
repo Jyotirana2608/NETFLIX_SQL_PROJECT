@@ -46,7 +46,7 @@ Select type, rating
 	 from netflix
      GROUP BY 1,2
 	 ) as t1
-     where ranking = 1 
+     where ranking = 1 ;
      
      #--3. list all moviesreleased in a specific year ( eg 2020) #
 
@@ -55,7 +55,7 @@ FROM netflix
 WHERE
 	type = 'Movie'
     AND
-    release_year = 2020
+    release_year = 2020;
     
 #--4. find the top 5 countries with the most content on netflix #
 
@@ -70,19 +70,11 @@ LIMIT 5;
 SELECT *
 FROM netflix
 WHERE type = 'Movie'
-ORDER BY duration DESC
+ORDER BY duration DESC;
 
 #  if need top 5 then add LIMIT 5  #
 
 # 6.  Find content added in last 5 years? #
-
- SELECT *
-   FROM netflix
-WHERE 
-  TO_DATE(date_added, "Month, DD, YYYY) >= CURRENT_DATE - INTERVAL "5 years"
-  
-  OR
-  #  STR_TO_DATE() means String To Date. and used to get the current year  #
   
  SELECT *
 FROM netflix
@@ -133,7 +125,7 @@ SELECT *
 FROM netflix
 WHERE director IS NULL;
 
- OR
+ #OR#
  
 SELECT *
 FROM netflix;
